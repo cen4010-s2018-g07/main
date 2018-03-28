@@ -67,3 +67,8 @@ body {
     font-size: 16px;
     font-family: 'catamaran', 'sans-serif';
 }
+
+li {
+    list-style-position: inside;
+    text-indent: -2em;
+}

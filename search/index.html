@@ -17,9 +17,10 @@
         <img src="Logo-FAU.jpg" alt="FAU College of Engineering logo" class="logo">
         <div class="parentButton">
             <!--<img src="search-icon.png" class="icon">-->
-            <input type="text" class="searchbox"><br><br>
-            <input type="button" class="button" value="Parts">&nbsp;&nbsp;
-            <input type="button" class="button" value="Services">
+            <form action = "search.php" method = "GET">
+                <input type="text" name="query" />
+                <input type="submit" value="Search" />
+            </form>
             
         </div>
     </body>
