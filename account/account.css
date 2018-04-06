@@ -1,0 +1,41 @@
+.col {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  max-width: 100%;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.p {
+    color: blue;
+    font-size: 20px;
+}
+
+.h1 {
+    color: red;
+    font-size: 25px;
+}
+
+.logo {
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-top: 30px;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid;
+    font-size: 16px;
+    font-family: 'catamaran', 'sans-serif';
+}
