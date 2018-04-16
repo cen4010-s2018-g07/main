@@ -89,3 +89,34 @@ li {
 #cart {
   float: right;
 }
+
+form.searchForm {
+    margin:auto;
+    max-width:350px;
+}
+
+form.searchForm input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    color: #003366;
+    border: 1px solid;
+    border-color: #CCCCCC;
+    border-radius: 10px;    
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+
+form.searchForm button {
+    border-radius: 10px;    
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #003366;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}

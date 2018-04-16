@@ -1,5 +1,21 @@
 <?php
-    require_once("../database_connection.php");
+    // Do not change the following two lines.
+    $teamURL = dirname($_SERVER['PHP_SELF']) . DIRECTORY_SEPARATOR;
+    $server_root = dirname($_SERVER['PHP_SELF']);
+
+    // You will need to require this file on EVERY php file that uses the database.
+    // Be sure to use $db->close(); at the end of each php file that includes this!
+
+    $dbhost = 'localhost';  // Most likely will not need to be changed
+    $dbname = 'CEN4010_S2018g07';   // Needs to be changed to your designated table database name
+    $dbuser = 'CEN4010_S2018g07';   // Needs to be changed to reflect your LAMP server credentials
+    $dbpass = 'password'; // Needs to be changed to reflect your LAMP server credentials
+
+    $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+    if($db->connect_errno > 0) {
+        die('Unable to connect to database [' . $db->connect_error . ']');
+    }
 ?>
 
 <html>
@@ -15,10 +31,11 @@
         <nav class="navbar">Home</nav>
             <img src="Logo-FAU.jpg" alt="FAU College of Engineering logo" class="logoResults">
         <div class="parentButtonResults">
-            <form action = "search.php" method = "GET">
-                <input type="text" name="query" class="searchbox" />  
-                
+            <form class = "searchForm" action = "search.php" method = "GET">
+                <input type="text" class="" placeholder="Search.." name="query">
+                <button type="submit">Search</button>
             </form>
+            <br><br>
         </div>
         <?php
             $query = $_GET['query'];
