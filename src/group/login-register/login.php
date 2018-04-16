@@ -12,3 +12,7 @@
  register_password: password
  register_college: college
 */
+
+<?php
+    require_once("../database_connection.php");
+?>
