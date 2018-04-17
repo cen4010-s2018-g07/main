@@ -24,7 +24,7 @@
     }
 
     if(count($errors) == 0) {  
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);       
+        //$hashed_password = password_hash($password, PASSWORD_DEFAULT);       
         $password_query = "SELECT * FROM accounts WHERE username = '$username' LIMIT 1;"; 
         $password_result = $db->query($password_query);
         $password_row = mysqli_fetch_assoc($password_result);

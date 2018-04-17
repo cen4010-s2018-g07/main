@@ -45,10 +45,29 @@
     }
 
     if(count($errors) == 0) {
-        // No empty required fields
-        
+        //print_r($_POST);
+        $email_parts = explode("@", $email);
+        $username = $email_parts[0];
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $users_query = "INSERT INTO users VALUES ('$znumber', NULL, '$first_name', 
+            '$last_name', '$email', '$phone_number', NULL, NULL);";
+        $db->query($users_query);
+
+        $accounts_query = "INSERT INTO accounts VALUES (NULL, '$znumber', '$username', '$hashed_password');";
+        $db->query($accounts_query);
+        $accounts_id = $db->insert_id;
+
+        $users_login_id_query = "UPDATE users SET login_id = $accounts_id 
+            WHERE znumber = $znumber;";
+
+        header('location: ../search/search.php');
+
+    }
+    else {
+        echo "Missing fields. Try again.";
     }
 
-
-
+    // close connection to database
+    $db->close();
 ?>
