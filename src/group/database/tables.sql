@@ -13,7 +13,7 @@ CREATE TABLE accounts (
      login_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
      znumber CHAR(8) NOT NULL,
      username VARCHAR(50) NOT NULL UNIQUE,
-     password VARCHAR(255) NOT NULL,
+     password VARCHAR(255) NOT NULL
      ) ENGINE = INNODB;
 
 ALTER TABLE accounts ADD CONSTRAINT fk_znumber FOREIGN KEY (znumber) REFERENCES users(znumber) 

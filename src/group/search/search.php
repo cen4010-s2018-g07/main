@@ -1,17 +1,6 @@
 <?php
-    // Do not change the following two lines.
-    $teamURL = dirname($_SERVER['PHP_SELF']) . DIRECTORY_SEPARATOR;
-    $server_root = dirname($_SERVER['PHP_SELF']);
-    // You will need to require this file on EVERY php file that uses the database.
-    // Be sure to use $db->close(); at the end of each php file that includes this!
-    $dbhost = 'localhost';  // Most likely will not need to be changed
-    $dbname = 'CEN4010_S2018g07';   // Needs to be changed to your designated table database name
-    $dbuser = 'CEN4010_S2018g07';   // Needs to be changed to reflect your LAMP server credentials
-    $dbpass = 'password'; // Needs to be changed to reflect your LAMP server credentials
-    $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-    if($db->connect_errno > 0) {
-        die('Unable to connect to database [' . $db->connect_error . ']');
-    }
+    // connect to CEN4010_S2018g07 database. Creates $db pointer
+    require_once("../database_connection.php");
 ?>
 
 <html>
@@ -24,7 +13,10 @@
         <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar">Home</nav>
+    <nav class="navbar">
+            <a href="./search.html">Home</a>
+            <a href="../account/account.html">Account</a>
+        </nav>
             <img src="Logo-FAU.jpg" alt="FAU College of Engineering logo" class="logoResults">
         <div class="parentButtonResults">
             <form class = "searchForm" action = "search.php" method = "GET">
@@ -33,6 +25,7 @@
             </form>
             <br><br>
         </div>
+
         <?php
             $query = $_GET['query'];
             $min_length = 3;
@@ -65,10 +58,7 @@
             }
             $db->close();
         ?>
-        <br>
-        <form action="http://lamp.cse.fau.edu/~CEN4010_S2018g07">
-            <input type="submit" value="Home" />
-        </form>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
         <script> src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"</script>
     </body>

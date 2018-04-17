@@ -37,7 +37,7 @@
 
         if(password_verify($password, $password_row['password'])){
             // account verification succeeded
-            echo "<br>Account exists. Username: " . $username;
+            header('location: ../search/search.html');
         }
         else{
             // account verification failed
