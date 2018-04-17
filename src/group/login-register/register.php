@@ -60,6 +60,7 @@
 
         $users_login_id_query = "UPDATE users SET login_id = $accounts_id 
             WHERE znumber = $znumber;";
+        $db->query($users_login_id_query);
 
         header('location: ../search/search.php');
 
