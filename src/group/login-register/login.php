@@ -7,8 +7,8 @@
  login_password: inputPassword
 */
     // connect to CEN4010_S2018g07 database. Creates $db pointer
-    require_once("../database_connection.php");
-    require_once("../functions.php");
+    require_once("../include/database_connection.php");
+    require_once("../include/functions.php");
 
     $errors = [];
 
