@@ -1,6 +1,12 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['login_id'])){
+        header('location: ../login-register/login.html');
+        exit();
+    }
     // connect to CEN4010_S2018g07 database. Creates $db pointer
     require_once("../include/database_connection.php");
+    require_once("../include/functions.php");
 ?>
 
 <html>
