@@ -44,22 +44,3 @@ body {
     font-family: 'Raleway', sans-serif;
     color: black;
 }
-
-.split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.bottom {
-    bottom: 0;
-    background-color: #003366;
-}
-
-.top {
-    top: 0;
-    background-color: white;
