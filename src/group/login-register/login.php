@@ -7,8 +7,8 @@
  login_password: inputPassword
 */
     // connect to CEN4010_S2018g07 database. Creates $db pointer
-    require_once("../database_connection.php");
-    require_once("../functions.php");
+    require_once("../include/database_connection.php");
+    require_once("../include/functions.php");
 
     $errors = [];
 
@@ -24,7 +24,7 @@
     }
 
     if(count($errors) == 0) {  
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);       
+        //$hashed_password = password_hash($password, PASSWORD_DEFAULT);       
         $password_query = "SELECT * FROM accounts WHERE username = '$username' LIMIT 1;"; 
         $password_result = $db->query($password_query);
         $password_row = mysqli_fetch_assoc($password_result);
@@ -37,7 +37,7 @@
 
         if(password_verify($password, $password_row['password'])){
             // account verification succeeded
-            echo "<br>Account exists. Username: " . $username;
+            header('location: ../search/search.html');
         }
         else{
             // account verification failed

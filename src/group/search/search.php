@@ -1,5 +1,6 @@
 <?php
-    require_once("../database_connection.php");
+    // connect to CEN4010_S2018g07 database. Creates $db pointer
+    require_once("../include/database_connection.php");
 ?>
 
 <html>
@@ -12,19 +13,22 @@
         <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar">Home</nav>
+    <nav class="navbar">
+            <a href="./search.html">Home</a>
+            <a href="../account/account.html">Account</a>
+        </nav>
             <img src="Logo-FAU.jpg" alt="FAU College of Engineering logo" class="logoResults">
         <div class="parentButtonResults">
-            <form action = "search.php" method = "GET">
-                <input type="text" name="query" class="searchbox" />  
-                
+            <form class = "searchForm" action = "search.php" method = "GET">
+                <input type="text" class="" placeholder="Search.." name="query">
+                <button type="submit">Search</button>
             </form>
+            <br><br>
         </div>
+
         <?php
             $query = $_GET['query'];
-
             $min_length = 3;
-
             if(strlen($query) < $min_length) {
                 echo "Minimum length for search is ".$min_length;
             }
@@ -34,13 +38,10 @@
                 $raw_results = mysqli_query($db, "SELECT * FROM Inventory 
                     WHERE (part_desc LIKE '%".$query."%') OR (keyword1 LIKE '%".$query."%') OR (keyword2 LIKE '%".$query."%')") 
                     or die(mysqli_error($db));
-
                 if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-
                     echo "<p>Showing results for: ".ucfirst($query)."</p>";
                     echo "<div class='container'> <div class='row'>";
                     
-
                     while($results = mysqli_fetch_array($raw_results)){
                     // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
                     
@@ -57,10 +58,7 @@
             }
             $db->close();
         ?>
-        <br>
-        <form action="http://lamp.cse.fau.edu/~CEN4010_S2018g07">
-            <input type="submit" value="Home" />
-        </form>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
         <script> src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"</script>
     </body>
