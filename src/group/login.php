@@ -7,9 +7,9 @@
  login_password: inputPassword
 */
     // connect to CEN4010_S2018g07 database. Creates $db pointer
-    require_once("../include/database_connection.php");
+    require_once("./include/database_connection.php");
     // include various custom functions
-    require_once("../include/functions.php");
+    require_once("./include/functions.php");
     
     session_start();
 
@@ -42,7 +42,7 @@
             // account verification succeeded
             $_SESSION['login_id'] = $password_row['login_id'];
             // direct user to home page
-            header('location: ../search/search.php');
+            header('location: ./home.html');
         }
         else{
             // account verification failed
