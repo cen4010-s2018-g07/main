@@ -34,6 +34,7 @@ search: query
         <link rel="stylesheet" href="css/shop-homepage.css">
         <link rel="stylesheet" href="css/search.css">
         <link rel="stylesheet" href="css/shop.css">
+        <link rel="stylesheet" href="css/home.css">
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"> </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
@@ -70,7 +71,7 @@ search: query
         </div>
 
         <div class="parentButtonResults">
-            <form class = "searchForm" action = "search.php" method = "GET">
+            <form class = "searchForm" action = "results.php" method = "GET">
                 <input type="text" class="" placeholder="Search.." name="query">
                 <button type="submit" class ="srh-btn">Search</button>
             </form>
@@ -110,12 +111,12 @@ search: query
                                 <div class='card-deck col-lg-4 col-md-6 mb-4'>
                                     <div class='card mb-4 box-shadow'>
                                         <div class='card-body'>
-                                            <h4 class='card-title'> $results['sku'] </h4>
-                                            <p class='card-text'> $results['part_desc'] </p>
-                                            <h5> Quantity: $results['quantity'] </h5>
+                                            <h4 class='card-title'>". $results['sku'] ."</h4>
+                                            <p class='card-text'>". $results['part_desc'] ."</p>
+                                            <h5> Quantity:". $results['quantity'] ."</h5>
                                             <div>
                                                 <div id='quantity' >
-                                                    <input id='inputQ' type='number' name='quantity' min='0' max='$results['quantity']' step='1' value='0'>
+                                                    <input id='inputQ' type='number' name='quantity' min='0' max='". $results['quantity'] ."S' step='1' value='0'>
                                                 </div>
                                                 <div id = 'cart'>
                                                     <button  type='button' class='btn btn-lg btn-block btn-outline-primary'>Add To Cart</button>
