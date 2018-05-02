@@ -20,22 +20,25 @@ sku = sku
     require_once("./include/functions.php");
 
     // get user znumber
-    $znumber_query = "SELECT * FROM accounts WHERE login_id = '$_SESSION['login_id'];"
+    $login_id = $_SESSION['login_id'];
+    $znumber_query = "SELECT * FROM accounts WHERE login_id = $login_id;";
     $znumber_result = $db->query($znumber_query);
     $znumber_row = mysqli_fetch_assoc($znumber_result);
     $znumber = $znumber_row['znumber'];
 
     // get item_id of sku
-    $item_query = "SELECT * FROM inventory WHERE sku = $_POST['sku'];"
+    $sku = $_POST['sku'];
+    $item_query = "SELECT * FROM inventory WHERE sku = $sku;";
     $item_result = $db->query($item_query);
     $item_row = mysqli_fetch_assoc($item_result);
     $item_id = $item_row['item_id'];
 
     // insert into carts
-    $carts_query = "INSERT INTO carts VALUES ('$znumber', $item_id, $_POST['quantity'], NULL);";
+    $quantity = $_POST['quantity'];
+    $carts_query = "INSERT INTO carts VALUES ('$znumber', $item_id, $quantity, NULL);";
     $db->query($carts_query);
 
     // send user to carts page
-    header('location: cart.php')
+    header('location: cart.php');
     // close connection to database
     $db->close();
