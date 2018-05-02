@@ -1,5 +1,5 @@
 <?php
-// M. Kaan Tasbas
+// M. Kaan Tasbas | mktasbas@gmail.com
 
 /* form POST names
 
@@ -27,7 +27,7 @@
     }
 
     if(count($errors) == 0) {  
-        //$hashed_password = password_hash($password, PASSWORD_DEFAULT);       
+        // get row from accounts       
         $password_query = "SELECT * FROM accounts WHERE username = '$username' LIMIT 1;"; 
         $password_result = $db->query($password_query);
         $password_row = mysqli_fetch_assoc($password_result);
@@ -38,6 +38,7 @@
         //echo "<br>Hashed Password: " . $hashed_password;
         //echo "<br>DB Password: " . $password_row['password'];
 
+        // verify hashed passwords
         if(password_verify($password, $password_row['password'])){
             // account verification succeeded
             $_SESSION['login_id'] = $password_row['login_id'];
