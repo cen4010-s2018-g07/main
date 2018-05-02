@@ -71,7 +71,7 @@
             <div class="prodListDisplay">
 
                 <div class="product-box">			   
-                    <form action="">		   
+                    <form action="cart.php" method="GET">		   
 
                         <div class="productItem clearfix">
 
@@ -130,7 +130,7 @@
             <div class="prodListDisplay">
 
                 <div class="product-box">			   
-                    <form action="">		   
+                    <form action="cart.php" method="GET">		   
 
                         <div class="productItem clearfix">
 
@@ -170,8 +170,10 @@
                                     <p class="ct-removeSingleConfirmation clearfix">
                                         <span class="message">Remove this item?</span>
                                         <span class="ct-buttons ct-inline-buttons">
-                                            <button class="btn-red ct-singleRemoveOK">OK</button>
-                                            <button class="btn-blue ct-singleRemoveCancel">Cancel</button>
+                                            <form action="cart.php" method="GET">
+                                                <button class="btn-red ct-singleRemoveOK">OK</button>
+                                                <button class="btn-blue ct-singleRemoveCancel">Cancel</button>
+                                            </form>
                                         </span>
                                     </p>
                                 </div>
@@ -189,7 +191,7 @@
         <!-- Checkout -->
 
         <div class="checkout">
-            <button type="button" class="chk-btn">Check Out</button>
+            <button type="submit" class="chk-btn">Check Out</button>
         </div>
 
         <!-- Footer -->
