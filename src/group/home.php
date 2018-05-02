@@ -67,9 +67,11 @@
             <br><br>
             <div class="search">
                 <input type="text" class="searchTerm" placeholder="Search parts">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
+                <form action='results.php' method = 'GET'>
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
 
