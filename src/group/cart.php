@@ -71,7 +71,7 @@
             <div class="prodListDisplay">
 
                 <div class="product-box">			   
-                    <form action="cart.php" method="GET">		   
+                    <form action="cart.php" method="post">		   
 
                         <div class="productItem clearfix">
 
@@ -130,7 +130,7 @@
             <div class="prodListDisplay">
 
                 <div class="product-box">			   
-                    <form action="cart.php" method="GET">		   
+                    <form action="cart.php" method="post">		   
 
                         <div class="productItem clearfix">
 
