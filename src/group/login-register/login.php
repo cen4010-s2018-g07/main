@@ -41,6 +41,7 @@
         if(password_verify($password, $password_row['password'])){
             // account verification succeeded
             $_SESSION['login_id'] = $password_row['login_id'];
+            // direct user to home page
             header('location: ../search/search.php');
         }
         else{
