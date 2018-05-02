@@ -19,6 +19,12 @@ CREATE TABLE accounts (
 ALTER TABLE accounts ADD CONSTRAINT fk_znumber FOREIGN KEY (znumber) REFERENCES users(znumber) 
 ON DELETE CASCADE ON UPDATE CASCADE;
 
+ CREATE TABLE carts ( znumber CHAR(8) NOT NULL,
+     item_id INT NOT NULL, quantity INT,
+     FOREIGN KEY (znumber) REFERENCES users, 
+     FOREIGN KEY (item_id) REFERENCES inventory.id 
+     ) ENGINE = INNODB;
+
 /*
 ALTER TABLE users ADD CONSTRAINT fk_login_id FOREIGN KEY (login_id) REFERENCES accounts(login_id) 
 ON DELETE CASCADE ON UPDATE CASCADE;
