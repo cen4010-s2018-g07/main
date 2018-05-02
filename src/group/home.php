@@ -1,6 +1,6 @@
 <?php
     // check if user is logged in
-    session_start()
+    session_start();
     if(!isset($_SESSION['login_id'])){
         header('location: login.html');
         exit();
