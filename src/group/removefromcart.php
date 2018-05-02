@@ -35,6 +35,6 @@ sku = sku
     $delete_result = $db->query($delete_query);
 
     // send user back to cart page
-    header('location: cart.html');
+    header('location: cart.php');
     // close connection to db
     $db->close();

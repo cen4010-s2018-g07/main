@@ -47,7 +47,7 @@
                             <a class="nav-link" href="home.php">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="cart.html">Cart
+                            <a class="nav-link" href="cart.php">Cart
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>

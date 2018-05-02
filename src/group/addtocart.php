@@ -36,6 +36,6 @@ sku = sku
     $db->query($carts_query);
 
     // send user to carts page
-    header('location: cart.html')
+    header('location: cart.php')
     // close connection to database
     $db->close();
