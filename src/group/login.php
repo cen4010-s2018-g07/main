@@ -47,12 +47,16 @@
         }
         else{
             // account verification failed
-            echo "Invalid username/password. Try again.";
+            echo "Invalid username/password. Redirecting to login page.";
+            // redirect user back to login after 2.5 seconds
+            DelayedRedirect("./login.html", "2500");
         }
     }
     else {
         // errors exist
-        echo "Username/Password required. Try again.";
+        echo "Username/Password required. Redirecting to login page.";
+        // redirect user back to login after 2.5 seconds
+        DelayedRedirect("./login.html", "2500");
     }
 
     // close connection to database

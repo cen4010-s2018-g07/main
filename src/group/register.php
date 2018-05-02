@@ -74,9 +74,11 @@ register_college: college
         header('location: ./home.html');
     }
     else {
-        echo "Missing fields. Try again.";
+        echo "Missing fields. Redirecting to login page.";
+        // return user back to registration page
+        DelayedRedirect("./register.html", "2500");
     }
-    
+
     // close connection to database
     $db->close();
 ?>
