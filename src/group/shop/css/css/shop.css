@@ -1,0 +1,123 @@
+.image {
+    width: 200px;
+    height: 100px;
+    padding-top: 
+}
+
+.custom-search-form{
+    margin-top:5px;
+}
+
+.col-lg-3 {
+    background:
+        linear-gradient(135deg, #003366 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+        linear-gradient(225deg, #003366 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color:#003366;
+    background-size: 64px 128px;
+    position: absolute;
+}
+
+.btn {
+    background: #CC0000 !important;
+    color: white !important;
+    border-color: #CC0000 !important;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #f00000 !important;
+}
+
+
+/*.search {
+float: inherit;
+}
+.search-bar {
+max-width: inherit;
+width: 475px;
+}*/
+
+
+.bg-dark {
+    background: #003366 !important;
+
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100%;
+    height:100%;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 2px solid #003366;
+    padding: 15px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+
+}
+
+.searchTerm:focus{
+    color: #003366;
+}
+
+.searchButton {
+    position: absolute;  
+    right: -50px;
+    width: 60px;
+    height: 34px;
+    border: 1px solid #003366;
+    background: #003366;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.searchButton:hover {
+    border: 1px solid #003366;
+    background: #00468c;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 60%;
+    position: absolute;
+    top: 5%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+
+
+.card {
+    border: 1px solid navy;
+
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#003366;
+    clear:both;
+}
