@@ -70,8 +70,11 @@ register_college: college
             WHERE znumber = $znumber;";
         $db->query($users_login_id_query);
 
+        // set session login_id
+        $_SESSION['login_id'] = $accounts_id;
+
         // direct to home page
-        header('location: ./home.html');
+        header('location: ./home.php');
     }
     else {
         echo "Missing fields. Redirecting to login page.";

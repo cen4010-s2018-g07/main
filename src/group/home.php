@@ -1,8 +1,14 @@
-<!DOCTYPE html>
+<?php
+    // check if user is logged in
+    session_start()
+    if(!isset($_SESSION['login_id'])){
+        header('location: login.html');
+        exit();
+    }
+?>
+
 <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -36,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="home.html">Home
+                            <a class="nav-link" href="home.php">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
@@ -75,5 +81,4 @@
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     </body>
-
 </html>

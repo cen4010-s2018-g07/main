@@ -43,7 +43,7 @@
             // account verification succeeded
             $_SESSION['login_id'] = $password_row['login_id'];
             // direct user to home page
-            header('location: ./home.html');
+            header('location: ./home.php');
         }
         else{
             // account verification failed
