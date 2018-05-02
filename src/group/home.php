@@ -66,8 +66,8 @@
             <img class="logo" src="images/Logo-FAU.jpg">
             <br><br>
             <div class="search">
-                <input type="text" class="searchTerm" placeholder="Search parts">
-                <form action='search.php' method = 'GET'>
+                <form action='results.php' method = 'GET'>
+                    <input type="text" class="searchTerm" placeholder="Search parts" name="query">
                     <button type="submit" class="searchButton">
                         <i class="fa fa-search"></i>
                     </button>
