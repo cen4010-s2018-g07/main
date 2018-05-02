@@ -119,7 +119,9 @@ search: query
                                                     <input id='inputQ' type='number' name='quantity' min='0' max='". $results['quantity'] ."S' step='1' value='0'>
                                                 </div>
                                                 <div id = 'cart'>
-                                                    <button  type='button' class='btn btn-lg btn-block btn-outline-primary'>Add To Cart</button>
+                                                    <form action="results.php" method="GET">
+                                                        <button  type='submit' class='btn btn-lg btn-block btn-outline-primary'>Add To Cart</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
