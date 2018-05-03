@@ -1,7 +1,7 @@
 <?php
 // M. Kaan Tasbas | mktasbas@gmail.com
 
-/* form POST names
+/* form GET names
 
 quantity = quantity
 sku = sku
@@ -27,14 +27,14 @@ sku = sku
     $znumber = $znumber_row['znumber'];
 
     // get item_id of sku
-    $sku = $_POST['sku'];
-    $item_query = "SELECT * FROM inventory WHERE sku = $sku;";
+    $sku = $_GET['sku'];
+    $item_query = "SELECT * FROM inventory WHERE sku = '$sku';";
     $item_result = $db->query($item_query);
     $item_row = mysqli_fetch_assoc($item_result);
     $item_id = $item_row['item_id'];
 
     // insert into carts
-    $quantity = $_POST['quantity'];
+    $quantity = $_GET['quantity'];
     $carts_query = "INSERT INTO carts VALUES ('$znumber', $item_id, $quantity, NULL);";
     $db->query($carts_query);
 

@@ -111,19 +111,20 @@ search: query
                                 <div class='card-deck col-lg-4 col-md-6 mb-4'>
                                     <div class='card mb-4 box-shadow'>
                                         <div class='card-body'>
-                                            <h4 class='card-title'>". $results['sku'] ."</h4>
-                                            <p class='card-text'>". $results['part_desc'] ."</p>
-                                            <h5> Quantity:". $results['quantity'] ."</h5>
-                                            <div>
-                                                <div id='quantity' >
-                                                    <input id='inputQ' type='number' name='quantity' min='0' max='". $results['quantity'] ."S' step='1' value='0'>
+                                            <form action='addtocart.php' method='GET'>
+                                                <h4 class='card-title'>". $results['sku'] ."</h4>
+                                                <input type='hidden' name='sku' value='". $results['sku'] ."' />
+                                                <p class='card-text'>". $results['part_desc'] ."</p>
+                                                <h5> Quantity:". $results['quantity'] ."</h5>
+                                                <div>
+                                                    <div id='quantity' >
+                                                        <input id='inputQ' type='number' name='quantity' min='0' max='". $results['quantity'] ."S' step='1' value='0'>
+                                                    </div>
+                                                    <div id = 'cart'>
+                                                            <button  type='submit' class='btn btn-lg btn-block btn-outline-primary'>Add To Cart</button>
+                                                    </div>
                                                 </div>
-                                                <div id = 'cart'>
-                                                    <form action="results.php" method="GET">
-                                                        <button  type='submit' class='btn btn-lg btn-block btn-outline-primary'>Add To Cart</button>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
