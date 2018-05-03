@@ -74,7 +74,7 @@
                         </li>
                     </ul>
                     <button type="submit" class="btn btn-default btn-sm" style="float: right">
-                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                        <span class="glyphicon glyphicon-log-out"></span> <a href="logout.php"> Log out </a>
                     </button>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                         <!-- Product 1 -->
                         <div class='prodListDisplay'>
                             <div class='product-box'>			   
-                                <form action='addtocart.php' method='POST'>		   
+                                <form action='removefromcart.php' method='GET'>		   
                                     <div class='productItem clearfix'>
                                         <div class='productTitle'>
                                             <h3>
@@ -133,7 +133,7 @@
                                                 <p class='ct-removeSingleConfirmation clearfix'>
                                                     <span class='message'>Remove this item?</span>
                                                     <span class='ct-buttons ct-inline-buttons'>
-                                                        <button class='btn-red ct-singleRemoveOK'>OK</button>
+                                                        <input type='submit' formaction='removefromcart.php' class='btn-red ct-singleRemoveOK'>
                                                         <button class='btn-blue ct-singleRemoveCancel'>Cancel</button>
                                                     </span>
                                                 </p>

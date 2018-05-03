@@ -58,7 +58,7 @@ search: query
                         </li>
                     </ul>
                     <button type="submit" class="btn btn-default btn-sm" style="float: right">
-                        <span class="glyphicon glyphicon-log-out"></span> Logout
+                        <span class="glyphicon glyphicon-log-out"></span> <a href="logout.php"> Log out </a>
                     </button>
                 </div>
             </div>

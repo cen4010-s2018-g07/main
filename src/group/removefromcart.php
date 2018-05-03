@@ -1,7 +1,7 @@
 <?php
 // M. Kaan Tasbas | mktasbas@gmail.com
 
-/* form POST names
+/* form GET names
 
 sku = sku
 */
@@ -25,7 +25,7 @@ sku = sku
     $znumber = $znumber_row['znumber'];
 
     // get item_id
-    $item_query = "SELECT * FROM inventory WHERE sku = $_POST['sku'];";
+    $item_query = "SELECT * FROM inventory WHERE sku = $_GET['sku'];";
     $item_result = $db->query($item_query);
     $item_row = mysqli_fetch_assoc($item_result);
     $item_id = $item_row['item_id'];
@@ -35,6 +35,6 @@ sku = sku
     $delete_result = $db->query($delete_query);
 
     // send user back to cart page
-    header('location: cart.php');
+    //header('location: cart.php');
     // close connection to db
     $db->close();

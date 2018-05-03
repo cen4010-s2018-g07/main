@@ -53,7 +53,7 @@
                     </ul>
 
                     <button type="submit" id="log-out" class="btn btn-default btn-sm" style="float: right">
-                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                        <span class="glyphicon glyphicon-log-out"></span> <a href="logout.php"> Log out </a>
                     </button>
                 </div>
             </div>
